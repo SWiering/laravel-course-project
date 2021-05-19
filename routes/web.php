@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,10 @@ Route::get('/', function () {
 
 Route::get('/about', function(){
     return view('about');
+})->middleware('check');
+
+Route::get('/home', function(){
+    echo "this is home page";
 });
 
-Route::get('/contact', function(){
-    return view('contact');
-});
+Route::get('/contact', [ContactController::class, 'index']);

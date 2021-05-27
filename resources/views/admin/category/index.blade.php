@@ -13,7 +13,7 @@
 
                         @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>{{ session('success') }}</strong> 
+                            <strong>{{ session('success') }}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -25,19 +25,27 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Srl. Nr.</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">Category name</th>
+                                    <th scope="col">User</th>
                                     <th scope="col">Created At</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php($i = 1)
+                                @foreach($categories as $category)
                                 <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                    <td>
+                                    <th scope="row"> {{ $i++ }} </th>
+                                    <td> {{ $category->category_name }} </td>
+                                    <td> {{ $category->user_id }} </td>
+                                    <td> 
+                                        @if($category->created_at)
+                                            {{ $category->created_at->diffForHumans() }} 
+                                        @else
+                                            <span class="text-danger">No date set</span>
+                                        @endif
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

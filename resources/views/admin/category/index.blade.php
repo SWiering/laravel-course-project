@@ -39,7 +39,7 @@
                                     <td> {{ $category->user_id }} </td>
                                     <td> 
                                         @if($category->created_at)
-                                            {{ $category->created_at->diffForHumans() }} 
+                                            {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }} 
                                         @else
                                             <span class="text-danger">No date set</span>
                                         @endif

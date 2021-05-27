@@ -28,7 +28,7 @@
                                     <th scope="row">{{ $single_user->id }}</th>
                                     <td>{{ $single_user->name }}</td>
                                     <td>{{ $single_user->email }}</td>
-                                    <td>{{ $single_user->created_at->diffForHumans() }}</td>
+                                    <td>{{ Carbon\Carbon::parse($single_user->created_at)->diffForHumans() }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

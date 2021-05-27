@@ -10,6 +10,16 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">
+
+                        @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
+
                         <div class="card-header">All Categories</div>
                         <table class="table">
                             <thead>
@@ -43,7 +53,7 @@
                                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
                                     @error('category_name')
-                                        <span class="text-danger"> {{ $message }} </span>
+                                    <span class="text-danger"> {{ $message }} </span>
                                     @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary">Add Category</button>

@@ -110,8 +110,8 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{ url('category/edit/'.$category->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url('category/delete/'.$category->id) }}" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('restore/category/'.$category->id) }}" class="btn btn-info">Restore</a>
+                                        <a href="{{ url('pdelete/category/'.$category->id) }}" class="btn btn-danger">P Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -35,6 +35,8 @@ Route::post('/category/add', [CategoryController::class, 'AddCat'])->name('store
 Route::get('/category/edit/{id}', [CategoryController::class, 'Edit']);
 Route::post('/category/update/{id}', [CategoryController::class, 'Update']);
 Route::get('/softdelete/category/{id}', [CategoryController::class, 'SoftDelete']);
+Route::get('/restore/category/{id}', [CategoryController::class, 'Restore']);
+Route::get('/pdelete/category/{id}', [CategoryController::class, 'Pdelete']);
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('con');

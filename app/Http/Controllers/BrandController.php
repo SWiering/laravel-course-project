@@ -45,4 +45,10 @@ class BrandController extends Controller
 
         return Redirect()->back()->with('success', 'Brand inserted successfully');
     }
+
+    public function Edit($id){
+        $brand = Brand::find($id);
+
+        return view('admin.brand.edit', compact('brand'));
+    }
 }

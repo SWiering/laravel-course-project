@@ -58,9 +58,5 @@ Route::get('/email/verify', function () {
 
 Route::get('/contact', [ContactController::class, 'index'])->name('con');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    // $users = User::all();
-
-    $users = DB::table('users')->get();
-
-    return view('dashboard', compact('users'));
+    return view('admin.index');
 })->name('dashboard');

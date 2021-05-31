@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -57,9 +58,15 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 
+
 Route::get('/contact', [ContactController::class, 'index'])->name('con');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
 
 Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logout');
+
+
+// admin all route
+Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.slider');
+

@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <h2>Home Slider</h2>
-                <a href="" class="btn btn-info">Add Slider</a>
+                <a href="{{ route('add.slider') }}" class="btn btn-info">Add Slider</a>
                 <div class="col-md-12">
                     <div class="card">
 
@@ -37,14 +37,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- @php($i = 1) -->
+                                @php($i = 1)
                                 @foreach($sliders as $slider)
                                 <tr>
-                                    <th scope="row"> {{ $sliders->firstItem()+$loop->index }} </th>
+                                    <th scope="row"> {{ $i++ }} </th>
                                     <td> {{ $slider->title }} </td>
                                     <td> {{ $slider->description }} </td>
                                     <td> 
-                                        <img src="{{ asset($slider->brand_image) }}" alt="" class="img-fluid"> 
+                                        <img src="{{ asset($slider->image) }}" alt="" class="img-fluid"> 
                                     </td>
                                     <td>
                                         <a href="{{ url('slider/edit/'.$slider->id) }}" class="btn btn-info">Edit</a>

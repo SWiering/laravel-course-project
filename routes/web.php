@@ -69,4 +69,6 @@ Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logou
 
 // admin all route
 Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.slider');
+Route::get('/add/slider', [HomeController::class, 'AddSlider'])->name('add.slider');
+Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('store.slider');
 

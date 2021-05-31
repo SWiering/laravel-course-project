@@ -11,8 +11,8 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-                <h2>Home Slider</h2>
-                <a href="{{ route('add.slider') }}" class="btn btn-info">Add About</a>
+                <h2>Home About</h2>
+                <a href="{{ route('add.about') }}" class="btn btn-info">Add About</a>
                 <div class="col-md-12">
                     <div class="card">
 
@@ -45,8 +45,8 @@
                                     <td> {{ $about->short_description }} </td>
                                     <td> {{ $about->long_description }} </td>
                                     <td>
-                                        <a href="{{ url('about/edit/'.$slider->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url('about/delete/'.$slider->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this slider?')">Delete</a>
+                                        <a href="{{ url('about/edit/'.$about->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ url('about/delete/'.$about->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this slider?')">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

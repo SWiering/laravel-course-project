@@ -79,4 +79,6 @@ Route::get('/delete/slider/{id}', [HomeController::class, 'DeleteSlider'])->name
 
 // Home About
 Route::get('/home/about', [AboutController::class, 'HomeAbout'])->name('home.about');
+Route::get('/add/about', [AboutController::class, 'AddAbout'])->name('add.about');
+Route::post('/store/about', [AboutController::class, 'StoreAbout'])->name('store.about');
 

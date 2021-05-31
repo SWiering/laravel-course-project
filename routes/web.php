@@ -4,6 +4,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -74,4 +75,8 @@ Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('stor
 Route::get('/edit/slider/{id}', [HomeController::class, 'EditSlider'])->name('edit.slider');
 Route::post('/update/slider/{id}', [HomeController::class, 'UpdateSlider'])->name('update.slider');
 Route::get('/delete/slider/{id}', [HomeController::class, 'DeleteSlider'])->name('delete.slider');
+
+
+// Home About
+Route::get('/home/about', [AboutController::class, 'HomeAbout'])->name('home.about');
 

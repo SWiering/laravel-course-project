@@ -115,4 +115,25 @@ class BrandController extends Controller
 
         return view('admin.multipic.index', compact('images'));
     }
+
+    public function StoreImage(Request $request){
+
+        $image = $request->file('image');
+
+        foreach($image as $multi){
+            $name_gen = hexdec(uniqid()) . '.' . $multi->getClientOriginalExtension();
+            Image::make($multi)->resize(300, 300)->save('images/multi/' . $name_gen);
+
+            $last_img = 'images/multi/' . $name_gen;
+
+            Multipic::insert([
+                'image'         => $last_img,
+                'created_at'    => Carbon::now()
+            ]);
+        }
+
+        
+
+        return Redirect()->back()->with('success', 'Brand inserted successfully');
+    }
 }

@@ -48,6 +48,7 @@ Route::get('/brand/delete/{id}', [BrandController::class, 'Delete']);
 
 
 Route::get('/multi/image', [BrandController::class, 'Multipic'])->name('multi.image');
+Route::post('/multi/add', [BrandController::class, 'StoreImage'])->name('store.image');
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('con');

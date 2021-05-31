@@ -25,7 +25,7 @@
                         </div>
                         @endif
 
-                        <div class="card-header">All Brand</div>
+                        <div class="card-header">All Slides</div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -47,8 +47,8 @@
                                         <img src="{{ asset($slider->image) }}" alt="" class="img-fluid"> 
                                     </td>
                                     <td>
-                                        <a href="{{ url('slider/edit/'.$slider->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ url('slider/delete/'.$slider->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this slider?')">Delete</a>
+                                        <a href="{{ url('edit/slider/'.$slider->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ url('delete/slider/'.$slider->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this slider?')">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

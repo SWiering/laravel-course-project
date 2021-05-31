@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Image;
+use Auth;
 
 class BrandController extends Controller
 {
@@ -138,5 +139,10 @@ class BrandController extends Controller
         
 
         return Redirect()->back()->with('success', 'Brand inserted successfully');
+    }
+
+    public function Logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success', 'User logged out succesfully');
     }
 }

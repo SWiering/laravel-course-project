@@ -1,4 +1,7 @@
-<x-app-layout>
+@extends('admin.admin_master')
+
+@section('admin')
+    
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             All Brands
@@ -90,4 +93,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+
+@endsection

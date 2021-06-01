@@ -89,4 +89,8 @@ Route::get('/about/edit/{id}', [AboutController::class, 'EditAbout']);
 Route::post('/update/homeabout/{id}', [AboutController::class, 'UpdateAbout']);
 Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout']);
 
+// Portfolio
+Route::get('/portfolio', [AboutController::class, 'Portfolio'])->name('portfolio');
+
+
 

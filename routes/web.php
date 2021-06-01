@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Models\Multipic;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
     $abouts = DB::table('home_abouts')->first();
-    return view('home', compact('brands', 'abouts'));
+
+    $images = Multipic::all();
+    return view('home', compact('brands', 'abouts', 'images'));
 });
 
 Route::get('/about', function(){

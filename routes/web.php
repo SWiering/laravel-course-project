@@ -92,5 +92,6 @@ Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout']);
 // Portfolio
 Route::get('/portfolio', [AboutController::class, 'Portfolio'])->name('portfolio');
 
+Route::get('/contact', [ContactController::class, 'AdminContact'])->name('admin.contact');
 
 
